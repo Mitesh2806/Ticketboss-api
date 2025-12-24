@@ -110,6 +110,14 @@ I chose to use the standard Node.js **Event Loop architecture with `async/await`
 2.  **Node.js Architecture:** Node.js is designed specifically for this use case. It uses a single thread to orchestrate operations but offloads the actual I/O (like waiting for MongoDB to respond) to the system kernel (via libuv). `async/await` is the mechanism that allows the main thread to handle thousands of other concurrent requests while waiting for the database response.
 3.  **Worker Thread Overhead:** Worker threads are useful for CPU-intensive tasks (e.g., video compression, complex math) that would block the main thread. Using them for simple database queries would introduce unnecessary memory overhead and context-switching costs without improving performance. The Event Loop is the most efficient pattern for high-throughput I/O APIs like TicketBoss.
 
-## Gd Project Structure
+## 📁 Project Structure
 
-src/ ├── controllers/ # Request handlers (extract data, call service, send response) ├── lib/ # Shared utilities (DB connection, Logger, Cron jobs) ├── middleware/ # Request validation (Zod) ├── models/ # Mongoose Data Models (Event, Reservation) ├── schema/ # Zod Validation Schemas ├── service/ # Business Logic (Concurrency logic lives here) ├── utils/ # Helpers (Seeding, Swagger config) └── index.ts # Entry point and Route definitions
+src/
+├── controllers/        # Request handlers: extract input, call services, return responses
+├── lib/                # Shared utilities (DB connection, logger, cron jobs)
+├── middleware/         # Request validation and middleware (Zod, auth, etc.)
+├── models/             # Mongoose data models (Event, Reservation)
+├── schema/             # Zod validation schemas
+├── service/            # Core business logic (includes concurrency handling)
+├── utils/              # Helper utilities (seeding, Swagger config)
+└── index.ts            # Application entry point and route definitions
