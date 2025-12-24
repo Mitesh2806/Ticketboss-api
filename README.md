@@ -48,7 +48,6 @@ This API allows external partners to:
 3.  **Configure Environment Variables:**
     Create a `.env` file in the root directory based on `.env.example`:
     ```env
-    PORT=3000
     MONGO_URI=mongodb://localhost:27017/ticketboss
     ```
 
@@ -66,7 +65,7 @@ This API allows external partners to:
 ## zb API Documentation
 
 Once the server is running, you can access the interactive Swagger documentation at:
-**`http://localhost:3000/docs`**
+**`http://localhost:3000/docs`** or **`https://ticketboss-api-6o7h.onrender.com/docs`**
 
 ### Core Endpoints
 

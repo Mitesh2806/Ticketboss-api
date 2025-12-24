@@ -31,7 +31,7 @@ const options: swaggerJsdoc.Options = {
           properties: {
             partnerId: {
               type: 'string',
-              description: 'Unique ID of the partner making the reservation',
+              description: 'ID of the partner making the reservation',
               example: 'partner_123',
             },
             seats: {
