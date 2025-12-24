@@ -13,6 +13,7 @@ import {
   cancelReservationHandler,
   getSummaryHandler,
 } from "./controllers/reservation.controller.js";
+import job from "./lib/cron.js";
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -113,7 +114,7 @@ app.delete("/reservations/:reservationId", cancelReservationHandler);
  *                     type: object
  */
 app.get("/reservations", getSummaryHandler);
-
+job.start();
 
 app.listen(port, async () => {
   logger.info(`App is running at http://localhost:${port}`);
