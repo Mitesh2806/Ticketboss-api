@@ -112,12 +112,12 @@ I chose to use the standard Node.js **Event Loop architecture with `async/await`
 
 ## 📁 Project Structure
 
-src/
-├── controllers/        # Request handlers: extract input, call services, return responses
-├── lib/                # Shared utilities (DB connection, logger, cron jobs)
-├── middleware/         # Request validation and middleware (Zod, auth, etc.)
-├── models/             # Mongoose data models (Event, Reservation)
-├── schema/             # Zod validation schemas
-├── service/            # Core business logic (includes concurrency handling)
-├── utils/              # Helper utilities (seeding, Swagger config)
-└── index.ts            # Application entry point and route definitions
+- **src/**
+  - **controllers/** – Request handlers (extract input, call services, send responses)
+  - **lib/** – Shared utilities (DB connection, logger, cron jobs)
+  - **middleware/** – Request validation and middleware (Zod, auth)
+  - **models/** – Mongoose data models (Event, Reservation)
+  - **schema/** – Zod validation schemas
+  - **service/** – Core business logic (includes concurrency handling)
+  - **utils/** – Helper utilities (seeding, Swagger configuration)
+  - **index.ts** – Application entry point and route definitions
