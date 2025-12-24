@@ -18,6 +18,10 @@ const options: swaggerJsdoc.Options = {
         url: 'http://localhost:3000',
         description: 'Local Development Server',
       },
+      {
+        url: 'https://ticketboss-api-6o7h.onrender.com',
+        description: 'Production Server',
+      }
     ],
     components: {
       schemas: {
